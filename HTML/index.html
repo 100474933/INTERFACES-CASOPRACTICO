@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sitio Web de Papá Noel</title>
+    <link rel="stylesheet" href="../CSS/styles.css">
+    
+</head>
+<body>
+    <!-- Barra de Navegación -->
+    <section id="barra-nav">
+        <!-- Menú desplegable -->
+        <div class="MenuDesplegable">
+            <img src="../imagenes/menu.png" alt="Menú" onclick="MenuDesplegable()">
+        </div>
+        <!-- Título -->
+        <h2 class="titulo">Mundo de Papá Noel</h2>
+        <!-- Botón de perfil -->
+        <div class="UserMenuDesplegable" onclick="UserMenuDesplegable()">
+            <img src="../imagenes/icono.png" alt="Perfil">
+        </div>
+    </section>
+
+    <!-- Menú de Navegación -->
+    
+    <div> 
+        <ul class="nav-menu hidden">
+            <li><a class="atrib-menu" href="#home">HOME</a></li>
+            <li><a class="atrib-menu" href="#rastreo">RASTREO EN TIEMPO REAL</a></li>
+            <li><a class="atrib-menu" href="#juegos">JUEGOS</a></li>
+            <li><a class="atrib-menu" href="#cartas">CARTAS A PAPÁ NOEL</a></li>
+            <li><a class="atrib-menu" href="#videollamadas">VIDEOLLAMADAS</a></li>
+            <li><a class="atrib-menu" href="#aldea">VISITA A LA ALDEA</a></li>
+            <li><a class="atrib-menu" href="#calendario">CALENDARIO DE ADVIENTO</a></li>
+            <li><a class="atrib-menu" href="#arbol">ÁRBOL DE NAVIDAD INTERACTIVO</a></li>
+        </ul>
+    </div>
+
+    <!-- Botones de autenticación -->
+    <div class="auth-buttons hidden" >
+        <input type="button" class="login-btn" value="Iniciar Sesión">
+        <input type="button" class="login-btn" value="Registrarse">
+    </div>
+
+    <main>
+        <!-- Pantalla de Inicio -->
+        <section id="home">
+            <h2>Bienvenido al Mundo de Papá Noel</h2>
+            <p>¡Aquí puedes interactuar con Papá Noel y disfrutar de muchas actividades navideñas!</p>
+            <img src="../imagenes/papanoel.gif" alt="Papá Noel">
+        </section>
+
+        <!-- Pantalla de Rastreo en Tiempo Real -->
+        <section id="rastreo">
+            <h2>Rastreo en Tiempo Real</h2>
+            <p>¡Sigue a Papá Noel en su recorrido por el mundo!</p>
+            <div id="mapa-rastreo"></div> 
+            <p id="contador-rastreo"></p> 
+        </section>
+
+        <!-- Pantalla de Juegos Interactivos -->
+        <section id="juegos">
+            <h2>Juegos y Actividades</h2>
+            <p>Juega con Papá Noel y sus amigos en actividades divertidas y educativas.</p>
+            <div id="lista-juegos">
+            </div>
+        </section>
+
+        <!-- Pantalla de Cartas a Papá Noel -->
+        <section id="cartas">
+            <h2>Cartas a Papá Noel</h2>
+            <p>Escribe tu carta a Papá Noel y recibe una respuesta personalizada.</p>
+            <form>
+                <textarea placeholder="Escribe tu carta aquí..." rows="4" cols="50"></textarea><br>
+                <button type="submit">Enviar Carta</button>
+            </form>
+        </section>
+
+        <!-- Pantalla de Videollamadas con Papá Noel -->
+        <section id="videollamadas">
+            <h2>Videollamadas con Papá Noel</h2>
+            <p>¡Agenda tu videollamada con Papá Noel y charla sobre tus deseos navideños!</p>
+            <div id="calendario-videollamadas"></div> 
+        </section>
+
+        <!-- Pantalla de Visita Virtual a la Aldea de Papá Noel -->
+        <section id="aldea">
+            <h2>Visita a la Aldea de Papá Noel</h2>
+            <p>Explora la aldea de Papá Noel y descubre cómo se preparan para la Navidad.</p>
+            <div id="mapa-aldea"></div>
+        </section>
+
+        <!-- Pantalla del Calendario de Adviento Interactivo -->
+        <section id="calendario">
+            <h2>Calendario de Adviento</h2>
+            <p>¡Abre una ventana cada día y descubre una sorpresa navideña!</p>
+            <div id="ventanas-calendario">
+                
+            </div>
+        </section>
+
+        <!-- Pantalla del Árbol de Navidad Interactivo -->
+        <section id="arbol">
+            <h2>Árbol de Navidad Interactivo</h2>
+            <p>Decora tu propio árbol de Navidad con luces, adornos y estrellas.</p>
+            <div id="arbol-decoracion"></div> 
+        </section>
+    </main>
+
+    <footer>
+        <p>© 2024 Papá Noel. Todos los derechos reservados.</p>
+    </footer>
+
+    <script src="../scripts/menu.js"></script>
+    <script src="../scripts/funciones.js"></script> 
+</body>
+</html>

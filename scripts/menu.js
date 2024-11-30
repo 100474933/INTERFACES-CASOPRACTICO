@@ -6,6 +6,6 @@ function MenuDesplegable() {
 
 // Función para mostrar/ocultar los botones de autenticación
 function UserMenuDesplegable() {
-    const authButtons = document.querySelector(".auth-buttons"); // Seleccionamos el div de los botones
-    authButtons.classList.toggle("hidden"); // Mostramos/ocultamos los botones
+    const authButtons = document.querySelector(".auth-buttons");
+    authButtons.classList.toggle("hidden");
 }

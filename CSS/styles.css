@@ -392,8 +392,8 @@ footer {
 
 /* Estilo para el mapa */ 
 #mapa-rastreo {
-    width: 400px;
-    height: 300px;
+    width: 600px; /* Aumentado el ancho del mapa */
+    height: 450px; /* Aumentado la altura del mapa */
     position: relative;
     margin: 0 auto 20px auto;
 }

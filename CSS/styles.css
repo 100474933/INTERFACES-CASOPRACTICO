@@ -386,21 +386,8 @@ footer {
 #rastreo {
     text-align: center;
     padding: 20px;
-    background-color: #f0f8ff;
     border-radius: 10px;
-    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
     margin-top: 40px;
-}
-
-#rastreo h2 {
-    font-size: 2rem;
-    color: #2f4f4f;
-}
-
-#rastreo p {
-    font-size: 1rem;
-    color: #333;
-    margin-bottom: 20px;
 }
 
 /* Estilo para el mapa */ 
@@ -408,14 +395,7 @@ footer {
     width: 400px;
     height: 300px;
     position: relative;
-    margin-bottom: 20px;
-    align-items: center;
+    margin: 0 auto 20px auto;
 }
 
-/* Estilo para el contador */
-#contador-rastreo {
-    font-size: 1.2rem;
-    color: #333;
-    font-weight: bold;
-}
 

@@ -10,16 +10,6 @@ document.addEventListener('DOMContentLoaded', function () {
     // Crear un marcador (representa a Papá Noel)
     let marcador = L.marker([51.505, -0.09]).addTo(mapa); // Empezamos en Londres
 
-    // Contador de tiempo
-    let contadorSegundos = 0;
-    const contadorElemento = document.getElementById('contador-rastreo');
-
-    // Función para actualizar el contador
-    function actualizarContador() {
-        contadorSegundos++;
-        contadorElemento.textContent = `Tiempo de recorrido: ${contadorSegundos} segundos`;
-    }
-
     // Rutas simuladas (coordenadas de ejemplo para simular el movimiento)
     const ruta = [
         [51.505, -0.09],   // Londres
@@ -27,6 +17,11 @@ document.addEventListener('DOMContentLoaded', function () {
         [40.7128, -74.0060], // Nueva York
         [34.0522, -118.2437], // Los Angeles
         [40.73061, -73.935242], // Brooklyn
+        [35.6895, 139.6917], // Tokio
+        [55.7558, 37.6173], // Moscú
+        [39.9042, 116.4074], // Pekín
+        [19.4326, -99.1332], // Ciudad de México
+        [28.6139, 77.2090] // Nueva Delhi
     ];
 
     let indexRuta = 0;
@@ -42,9 +37,6 @@ document.addEventListener('DOMContentLoaded', function () {
             indexRuta = 0;
         }
     }
-
-    // Actualizar el contador cada segundo
-    setInterval(actualizarContador, 1000); // Cada segundo se incrementa el contador
 
     // Mover el marcador a intervalos (simula el movimiento de Papá Noel)
     setInterval(moverMarcador, 5000); // Mueve el marcador cada 5 segundos

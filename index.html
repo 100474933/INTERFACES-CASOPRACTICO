@@ -44,11 +44,56 @@
         <input type="button" class="login-btn" value="Registrarse">
     </div>
 
+    <!-- Botones de autenticación -->
+    <div class="auth-buttons">
+        <input type="button" class="login-btn" value="Iniciar Sesión" onclick="toggleLoginForm()">
+        <input type="button" class="register-btn" value="Registrarse" onclick="toggleRegisterForm()">
+    </div>
+
+    <!-- Formulario de Inicio de Sesión -->
+    <div id="login-form" class="form-container hidden">
+        <h3>Iniciar Sesión</h3>
+        <form onsubmit="loginUser(event)">
+            <label for="login-email">Correo Electrónico:</label>
+            <input type="email" id="login-email" required>
+            <label for="login-password">Contraseña:</label>
+            <input type="password" id="login-password" required>
+            <button type="submit">Iniciar Sesión</button>
+        </form>
+    </div>
+
+    <!-- Formulario de Registro -->
+    <div id="register-form" class="form-container hidden">
+        <h3>Registrarse</h3>
+        <form onsubmit="registerUser(event)">
+            <label for="register-name">Nombre:</label>
+            <input type="text" id="register-name" required>
+               <label for="register-lastname">Apellidos:</label>
+            <input type="text" id="register-lastname" required>
+            <label for="register-email">Correo Electrónico:</label>
+            <input type="email" id="register-email" required>
+            <label for="register-password">Contraseña:</label>
+            <input type="password" id="register-password" required>
+            <label for="register-repeat-password">Repetir Contraseña:</label>
+            <input type="password" id="register-repeat-password" required>
+            <label for="register-age">Edad:</label>
+            <input type="number" id="register-age" required>
+            <label for="register-city">Ciudad:</label>
+            <input type="text" id="register-city" required>
+            <label for="register-country">País:</label>
+            <input type="text" id="register-country" required>
+            <button type="submit">Registrarse</button>
+        </form>
+    </div>
+
+
     <main>
         <!-- Pantalla de Inicio -->
         <section id="home">
             <h2>Bienvenido al Mundo de Papá Noel</h2>
             <p>¡Aquí puedes interactuar con Papá Noel y disfrutar de muchas actividades navideñas!</p>
+            <p><span id="subtitulo">Tiempo restante hasta el 25 de diciembre:</span></p>
+            <p id="contador">Días: <span id="days">0</span>, Horas: <span id="hours">0</span>, Minutos: <span id="minutes">0</span>, Segundos: <span id="seconds">0</span></p>
             <img src="../imagenes/papanoel.gif" alt="Papá Noel">
         </section>
 
@@ -63,18 +108,34 @@
         <!-- Pantalla de Juegos Interactivos -->
         <section id="juegos">
             <h2>Juegos y Actividades</h2>
-            <p>Juega con Papá Noel y sus amigos en actividades divertidas y educativas.</p>
-            <div id="lista-juegos">
+            <p>Elige un juego para jugar:</p>
+            <div id="game-selection">
+                <button onclick="startGame('guessNumber')">Adivina el número</button>
+                <button onclick="startGame('clickCircle')">Clic en el círculo</button>
+                <button onclick="startGame('countLetters')">Cuenta las letras</button>
             </div>
+        
+            <div id="game-container"></div>
         </section>
+        
+
+        
 
         <!-- Pantalla de Cartas a Papá Noel -->
-        <section id="cartas">
-            <h2>Cartas a Papá Noel</h2>
-            <p>Escribe tu carta a Papá Noel y recibe una respuesta personalizada.</p>
-            <form>
-                <textarea placeholder="Escribe tu carta aquí..." rows="4" cols="50"></textarea><br>
-                <button type="submit">Enviar Carta</button>
+        <section id="enviar-carta">
+            <h2>Envía tu Carta</h2>
+            <form class="formulario" id="carta-form" onsubmit="enviarCarta(event)">
+                <label for="nombre">Nombre:</label>
+                <input type="text" id="nombre" required>
+                <label for="email">Correo electrónico:</label>
+                <input type="email" id="email" required>
+                <label for="ciudad">Ciudad:</label>
+                <input type="text" id="ciudad" required>
+                <label for="pais">País:</label>
+                <input type="text" id="pais" required>
+                <label for="carta">Carta para Papá Noel:</label>
+                <textarea id="carta" required></textarea>
+                <input type="submit" value="Enviar">
             </form>
         </section>
 
@@ -167,8 +228,28 @@
         <!-- Pantalla del Árbol de Navidad Interactivo -->
         <section id="arbol">
             <h2>Árbol de Navidad Interactivo</h2>
-            <p>Decora tu propio árbol de Navidad con luces, adornos y estrellas.</p>
-            <div id="arbol-decoracion"></div> 
+            <p>Arrastra y suelta los adornos sobre el árbol.</p>
+        
+            <!-- Contenedor del árbol con la imagen -->
+            <div id="tree-container">
+                <img id="tree" src="../imagenes/arbol.png" alt="Árbol de Navidad" class="tree">
+            </div>
+        
+            <!-- Contenedor de los adornos -->
+            <div id="ornament-container">
+                <h3>Selecciona los adornos:</h3>
+                <div class="ornament" id="star" draggable="true">⭐</div>
+                <div class="ornament" id="ball-blue" draggable="true">🔵</div>
+                <div class="ornament" id="garland" draggable="true">🎀</div>
+                <div class="ornament" id="gift" draggable="true">🎁</div>
+                <div class="ornament" id="bells" draggable="true">🔔</div>
+                <div class="ornament" id="candy-cane" draggable="true">🍬</div>
+                <div class="ornament" id="snowflake" draggable="true">❄️</div>
+            </div>
+
+            <!-- Botones para limpiar o deshacer -->
+            <button id="clear-button">Limpiar todo</button>
+            <button id="undo-button">Deshacer</button>
         </section>
     </main>
 
@@ -181,4 +262,9 @@
     <script src="scripts/aldea.js"></script>
     <script src="scripts/rastreo.js"></script>
     <script src="scripts/videollamada.js"></script>
+    <script src="scripts/juegos.js"></script>
+    <script src="scripts/arbol.js"></script>
+    <script src="scripts/contador.js"></script>
+    <script src="scripts/auth.js"></script>
+
 </html>

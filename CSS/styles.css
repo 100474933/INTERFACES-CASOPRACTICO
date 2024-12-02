@@ -314,13 +314,13 @@ button:hover {
 
 /* Estilo para el contenedor de la llamada */
 #llamada-container {
-    width: 600px; /* Ancho del video */
+    width: 700px; 
     margin: 0 auto;
-    position: relative; /* Para posicionar el botón de colgar dentro */
+    position: relative;
     background-color: #000;
     border-radius: 10px;
     padding: 20px;
-    display: none; /* Ocultamos el contenedor por defecto */
+    display: none; 
 }
 
 /* Estilo para el video dentro del contenedor negro */

@@ -21,6 +21,32 @@
     margin: 0;
 }
 
+* Formularios desplegables */
+.form-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    background-color: #ffffff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 20px;
+    width: 300px;
+    margin: 20px auto;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.hidden {
+    display: none;
+}
+
+.form-container h3 {
+    margin-bottom: 10px;
+    font-size: 1.5em;
+    color: #004d40;
+}
+
+
 /* Secciones principales */
 main {
     padding-top: 80px;
@@ -28,6 +54,7 @@ main {
 }
 
 section {
+    margin-top: 60px;
     padding: 20px;
     margin: 20px 0;
     background-color: #b2e6f371;
@@ -39,6 +66,7 @@ section {
 h2 {
     color: #004d40;
     font-size: 28px;
+    margin-top: 100px;
 }
 
 /* Footer */
@@ -58,25 +86,59 @@ footer {
     height: 90px;
 }
 
-.UserMenuDesplegable img {
-    margin-right: 40px;
-    width: 40px;
-    height: 40px;
+.MenuDesplegable img:hover {
+    transform: rotate(90deg);
+}
+
+/* Estilo del menú cuando está visible */
+.nav-menu {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    background-color: #107967;
+    padding: 20px;
+    position: fixed;
+    top: 60px;
+    left: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    width: 200px;
+    z-index: 1001;
+}
+
+.nav-menu li {
+    margin: 10px 0;
+}
+
+.nav-menu a {
+    color: #fff;
+    font-size: 18px;
+    text-decoration: none;
+    transition: color 0.3s ease;
 }
 
 .nav-menu.hidden {
     display: none;
 }
 
-.nav-menu {
-    list-style: none;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    background-color: #107967;
+/*//////////////////////////////////////////////////////////////////*/
+
+/* Estilos para el icono del usuario */
+.UserMenuDesplegable img {
+    width: 40px;
+    height: 40px;
+    margin-right: 30px;
+}
+
+/* Efecto hover en el ícono de usuario */
+.UserMenuDesplegable img:hover {
+    transform: scale(1.2); /* Aumenta el tamaño al pasar el mouse */
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.3); /* Sombra alrededor de la imagen */
 }
 
 /* Estilo de los botones */
+
+
 .auth-buttons input {
     padding: 8px 15px;
     border: none;
@@ -90,7 +152,389 @@ footer {
     width: 100%;
 }
 
+
+/* Botones de autenticación */
+.auth-buttons input {
+    padding: 10px 20px;
+    border: none;
+    background-color: #004d40;
+    color: #fff;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+    margin: 10px 0;
+    transition: background-color 0.3s ease;
+}
+
+/*//////////////////////////////////////////////////////////////////*/
+
 #home img {
     width: 60%;
     height: 60%;
 }
+
+/* Formulario */
+
+#enviar-carta {
+    display: flex;
+    flex-direction: column; /* Para que el título y el formulario se apilen verticalmente */
+    align-items: center; /* Centra el contenido horizontalmente */
+    text-align: center; /* Centra el texto */
+    padding: 40px 20px; /* Espaciado interno para una mejor presentación */
+    gap: 20px; /* Espacio entre el título y el formulario */
+    background-color: #b2e6f371;
+    border-radius: 8px;
+}
+
+#enviar-carta h2 {
+    font-size: 3em;
+    color: #004d40;
+    margin-bottom: 20px; /* Espacio entre el título y el formulario */
+}
+
+.formulario {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 50%;
+    max-width: 600px;
+}
+
+/* Estilos básicos para los juegos */
+#game-selection {
+    margin: 20px;
+}
+
+#game-container {
+    margin-top: 20px;
+}
+
+button {
+    padding: 10px;
+    margin: 10px;
+    background-color: #004d40;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #00796b;
+}
+
+/* Estilos para el círculo en el juego "Clic en el círculo" */
+#circle {
+    width: 50px;
+    height: 50px;
+    background-color: red;
+    border-radius: 50%;
+    position: absolute;
+}
+
+#arbol {
+    text-align: center;
+    margin-top: 20px;
+}
+
+#tree-container {
+    position: relative;
+    width: 500px;
+    height: 500px;
+    margin: 20px auto;
+}
+
+.tree {
+    width: 100%;
+    height: auto;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+#ornament-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.ornament {
+    font-size: 30px;
+    margin: 10px;
+    cursor: pointer;
+}
+
+button {
+    margin-top: 20px;
+    padding: 10px;
+    background-color: #004d40;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #00796b;
+}
+
+button {
+    margin-top: 20px;
+    padding: 10px;
+    background-color: #004d40;
+    color: white;
+    border: none;
+    cursor: pointer;
+    margin-left: 10px;
+}
+
+button:hover {
+    background-color: #00796b;
+}
+/*/////////////////////////////////////////////////////////////////*/
+/* Estilo general para la sección de videollamadas */
+#videollamadas {
+    text-align: center;
+    padding: 20px;
+    background-color: #f0f8ff;
+    border-radius: 10px;
+    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+    margin-top: 40px;
+}
+
+/* Título y descripción de la sección */
+#videollamadas h2 {
+    font-size: 2rem;
+    color: #2f4f4f;
+}
+
+#videollamadas p {
+    font-size: 1rem;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+/* Estilo para el contenedor de la llamada */
+#llamada-container {
+    width: 600px; /* Ancho del video */
+    margin: 0 auto;
+    position: relative; /* Para posicionar el botón de colgar dentro */
+    background-color: #000;
+    border-radius: 10px;
+    padding: 20px;
+    display: none; /* Ocultamos el contenedor por defecto */
+}
+
+/* Estilo para el video dentro del contenedor negro */
+#pantalla-llamada {
+    position: relative;
+    background-color: #000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Estilo para el video */
+#video-papa-noel {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+/* Estilo para el botón de colgar dentro de la pantalla de llamada */
+.boton-colgar {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 50px;
+    height: auto;
+    cursor: pointer;
+}
+
+/* Estilo para el contenedor de los botones de llamar */
+#botones-container {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+/* Estilo para los botones de llamar */
+.boton {
+    width: 100px;
+    height: auto;
+    cursor: pointer;
+}
+
+/* Esconder el botón de colgar por defecto */
+#boton-colgar {
+    display: none;
+}
+
+/* Esconder el botón de llamar cuando está en la llamada */
+#boton-llamar {
+    display: block;
+}
+
+/* Esconder la pantalla de llamada por defecto */
+#llamada-container {
+    display: none;
+}
+
+/* Hacer visible el botón de llamar solo cuando no haya llamada */
+#boton-llamar.oculto {
+    display: none;
+}
+
+/* Hacer visible el botón de colgar cuando hay llamada */
+#boton-colgar.visible {
+    display: block;
+}
+
+/*/////////////////////////////////////////////////////////////////*/
+
+/* Estilo de las "ventanas" del calendario */
+#ventanas-calendario {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr); /* 6 columnas */
+    gap: 10px;
+}
+
+/* Estilo de cada ventana */
+.ventana {
+    width: 150px;
+    height: 150px;
+    background-color: #d32f2f;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 25px;
+    font-weight: bold;
+}
+
+.ventana:hover {
+    background-color: #ffc107;
+}
+
+.ventana.abierta {
+    background-color: #388e3c;
+    display: block;
+}
+
+
+.ventana img {
+    width: 100%;     
+    height: 100%;   
+    object-fit: contain; 
+    display: none;   
+}
+
+/*////////////////////////////////////////////////////////////////*/
+/* Contenedor de la galería */
+.galeria-aldea {
+    display: flex;
+    gap: 20px;
+    padding: 10px;
+    overflow-x: auto; 
+    margin-left: 10%;
+}
+
+.imagen-aldea {
+    text-align: center;
+    cursor: pointer;
+    flex-shrink: 0; 
+    width: 200px;
+    height: auto;
+    animation: aparecerDerecha 1s ease-out forwards;
+}
+
+.imagen-aldea:nth-child(1) {
+    animation-delay: 0.2s; /
+}
+.imagen-aldea:nth-child(2) {
+    animation-delay: 0.4s; 
+}
+.imagen-aldea:nth-child(3) {
+    animation-delay: 0.6s;
+}
+.imagen-aldea:nth-child(4) {
+    animation-delay: 0.8s;
+}
+.imagen-aldea:nth-child(5) {
+    animation-delay: 1s; 
+}
+.imagen-aldea:nth-child(6) {
+    animation-delay: 1.2s; 
+}
+
+/* Animación para que las imágenes aparezcan desde la derecha */
+@keyframes aparecerDerecha {
+    0% {
+        transform: translateX(100%);
+        opacity: 0; 
+    }
+    100% {
+        transform: translateX(0); /* Se mueve a su posición original */
+        opacity: 1; /* Se hace visible */
+    }
+}
+
+/* Estilos adicionales para las imágenes */
+.imagen-aldea img {
+    width: 100%;
+    border-radius: 10px;
+}
+
+.imagen-aldea p {
+    margin-top: 10px;
+    font-size: 18px;
+    color: #004d40;
+    font-weight: bold;
+}
+
+/* Estilo para el popup de descripción */
+.descripcion-popup {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(206, 51, 51, 0.911);
+    color: white;
+    padding: 20px;
+    border-radius: 10px;
+    z-index: 100;
+    text-align: center;
+}
+
+.descripcion-popup p {
+    margin: 0;
+    font-size: 18px;
+}
+
+.descripcion-popup button {
+    margin-top: 10px;
+    padding: 10px 20px;
+}
+
+.descripcion-popup button:hover {
+    background-color: #e62f22;
+}
+
+/*////////////////////////////////////////////////////////////////*/
+#rastreo {
+    text-align: center;
+    padding: 20px;
+    border-radius: 10px;
+    margin-top: 40px;
+}
+
+/* Estilo para el mapa */ 
+#mapa-rastreo {
+    width: 600px; /* Aumentado el ancho del mapa */
+    height: 450px; /* Aumentado la altura del mapa */
+    position: relative;
+    margin: 0 auto 20px auto;
+}
+
+

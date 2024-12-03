@@ -4,10 +4,10 @@ function MenuDesplegable() {
     navMenu.classList.toggle("hidden"); // Mostramos/ocultamos el menú
 }
 
-// Función para mostrar/ocultar los botones de autenticación
+// Función para mostrar/ocultar el menú del usuario
 function UserMenuDesplegable() {
-    const authButtons = document.querySelector(".auth-buttons"); // Seleccionamos el div de los botones
-    authButtons.classList.toggle("hidden"); // Mostramos/ocultamos los botones
+    const userMenu = document.querySelector(".user-menu"); // Seleccionamos el menú del usuario
+    userMenu.classList.toggle("hidden"); // Mostramos/ocultamos el menú del usuario
 }
 
 let loggedInUser = null; // Variable global para almacenar el usuario que inició sesión
@@ -93,6 +93,16 @@ function loginUser(event) {
         hideAuthButtons();
     } else {
         alert("Correo o contraseña incorrectos");
+    }
+}
+
+// Función para cerrar sesión
+function logoutUser() {
+    if (confirm("¿Estás seguro de que deseas cerrar sesión?")) {
+        loggedInUser = null;
+        alert("Has cerrado sesión exitosamente.");
+        document.querySelector(".auth-buttons").classList.remove("hidden");
+        document.querySelector(".user-menu").classList.add("hidden");
     }
 }
 

@@ -224,25 +224,57 @@ footer {
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.3); /* Sombra alrededor de la imagen */
 }
 
-/* Estilo de los botones */
-
-
-.auth-buttons input {
-    padding: 8px 15px;
-    border: none;
-    background-color: #ffc10717; 
-    color: #000;
-    font-size: 16px;
-    cursor: pointer;
-    transition: background-color 0.3s;
-    border-radius: 5px;
-    margin: 5px 0;
-    width: 100%;
+/* Estilo para el pop-out del menú del usuario */
+.user-menu {
+    position: absolute;
+    top: 70px; /* Espaciado debajo del icono del usuario */
+    right: 10px; /* Alineado al lado derecho */
+    background-color: #004d40;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    padding: 20px;
+    width: 250px;
+    display: none; /* Oculto inicialmente */
+    z-index: 1002;
+    opacity: 0;
+    transform: scale(0.9);
+    transition: opacity 0.3s ease, transform 0.3s ease;
 }
 
+.user-menu.visible {
+    display: block; /* Muestra el menú */
+    opacity: 1;
+    transform: scale(1); /* Regresa al tamaño normal */
+}
 
-/* Botones de autenticación */
-.auth-buttons input {
+.user-menu ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.user-menu li {
+    margin-bottom: 15px;
+}
+
+.user-menu a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 16px;
+    display: block;
+    text-align: center;
+    padding: 10px;
+    border-radius: 5px;
+    background-color: #004d40;
+    transition: background-color 0.3s ease;
+}
+
+.user-menu a:hover {
+    background-color: #00796b;
+}
+
+/* Botones de autenticación como parte del menú */
+.user-menu button {
     padding: 10px 20px;
     border: none;
     background-color: #004d40;
@@ -250,9 +282,20 @@ footer {
     font-size: 16px;
     cursor: pointer;
     border-radius: 5px;
-    margin: 10px 0;
     transition: background-color 0.3s ease;
+    width: 100%;
 }
+
+.user-menu button:hover {
+    background-color: #00796b;
+}
+
+/* Contenedor de los botones de autenticación */
+.auth-buttons.hidden {
+    display: none;
+}
+
+
 
 /*//////////////////////////////////////////////////////////////////*/
 
@@ -540,6 +583,207 @@ button:hover {
     height: 450px; 
     position: relative;
     margin: 0 auto 20px auto;
+}
+
+
+@media only screen and (max-width: 601px) {
+    .nav-menu {
+        position: absolute;
+        top: 50px;
+        left: 0;
+        width: 100%; /* Ocupa todo el ancho de la pantalla */
+        background-color: #004d40;
+        display: none; /* Ocultar por defecto */
+        flex-direction: column; /* Alinear los elementos en columna */
+        padding: 10px 0;
+        z-index: 1001;
+    }
+
+    .nav-menu li {
+        margin: 10px 0;
+        text-align: center; /* Centrar los enlaces */
+    }
+
+    .nav-menu a {
+        color: white;
+        font-size: 16px;
+        text-decoration: none;
+    }
+
+    .nav-menu.hidden {
+        display: none;
+    }
+
+    .nav-menu.visible {
+        display: flex; /* Mostrar menú cuando está visible */
+    }
+
+    .MenuDesplegable img {
+        width: 40px; /* Ajustar tamaño del icono del menú */
+        height: 40px;
+        cursor: pointer;
+    }
+
+    .titulo {
+        font-size: 14px;
+        text-align: center;
+        flex: 1; /* Asegura que ocupe el centro */
+        margin-left: 5px;
+    }
+
+    .titulo {
+        font-size: 16px;
+    }
+
+    .nav-menu {
+        width: 150px;
+        font-size: 14px;
+    }
+
+    h2 {
+        font-size: 24px;
+    }
+
+    section {
+        padding: 10px;
+    }
+
+    #home img {
+        width: 80%;
+        height: auto;
+    }
+
+    .galeria-aldea img {
+        max-width: 100%;
+        height: auto;
+        border-radius: 5px;
+    }
+
+    .galeria-aldea {
+        padding: 5px;
+    }
+
+    .formulario {
+        width: 80%;
+    }
+
+    #ornament-container {
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+
+    .ornament {
+        font-size: 20px;
+    }
+
+    #tree-container {
+        width: 300px;
+        height: 300px;
+    }
+
+    #llamada-container {
+        width: 100%;
+        padding: 10px;
+    }
+
+    #mapa-rastreo {
+        width: 100%;
+        height: 300px;
+    }
+    #ventanas-calendario {
+        grid-template-columns: repeat(3, 1fr); /* Cambiar a 3 columnas en lugar de 6 */
+        gap: 5px;
+        padding: 10px;
+    }
+
+    .ventana {
+        width: 80px; /* Reducir el tamaño de las ventanas */
+        height: 80px;
+        font-size: 14px; /* Ajustar el tamaño del texto */
+    }
+    #arbol {
+        margin-top: 20px;
+    }
+}
+
+
+@media only screen and (max-width: 768px) and (min-width: 601px) {
+    #barra-nav {
+        height: 60px;
+        padding: 0 15px;
+    }
+
+    .titulo {
+        font-size: 18px;
+    }
+
+    .nav-menu {
+        width: 180px;
+        font-size: 16px;
+    }
+
+    h2 {
+        font-size: 26px;
+    }
+
+    section {
+        padding: 15px;
+    }
+
+    #home img {
+        width: 70%;
+        height: auto;
+    }
+
+    #ventanas-calendario {
+        grid-template-columns: repeat(4, 1fr); /* Cambiar a 4 columnas para tablets */
+        gap: 10px; /* Espaciado ligeramente mayor */
+    }
+
+    .ventana {
+        width: 100px; /* Ajustar tamaño moderado */
+        height: 100px;
+        font-size: 20px; /* Texto más grande para tablets */
+    }
+
+    .galeria-aldea {
+        gap: 15px;
+        margin-left: 8%;
+    }
+
+    .imagen-aldea {
+        width: 180px;
+    }
+
+    .formulario {
+        width: 70%;
+    }
+
+    #ornament-container {
+        flex-wrap: wrap;
+        gap: 15px;
+    }
+
+    #tree-container {
+        width: 200px;
+        height: 300px;
+        margin: 0 auto; /* Centrar el árbol */
+    }
+
+    .ornament {
+        font-size: 18px; /* Reducir el tamaño de los adornos */
+        margin: 5px;
+    }
+
+    #llamada-container {
+        width: 90%;
+        padding: 15px;
+    }
+
+    #mapa-rastreo {
+        width: 100%;
+        height: 400px;
+    }
 }
 
 

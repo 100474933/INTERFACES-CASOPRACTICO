@@ -1,3 +1,4 @@
+
 document.addEventListener('DOMContentLoaded', function () {
     // Inicializar el mapa
     const mapa = L.map('mapa-rastreo').setView([51.505, -0.09], 2); // Ubicación inicial en el centro del mundo
@@ -7,8 +8,16 @@ document.addEventListener('DOMContentLoaded', function () {
         attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
     }).addTo(mapa);
 
-    // Crear un marcador (representa a Papá Noel)
-    let marcador = L.marker([51.505, -0.09]).addTo(mapa); // Empezamos en Londres
+    // Crear un icono personalizado para Papá Noel
+    const iconoPapaNoel = L.icon({
+        iconUrl: 'imagenes/papanoelvolando.png', 
+        iconSize: [110, 110], 
+        iconAnchor: [25, 50], 
+        popupAnchor: [0, -50] 
+    });
+
+    // Crear un marcador con el icono personalizado
+    let marcador = L.marker([51.505, -0.09], { icon: iconoPapaNoel }).addTo(mapa);
 
     // Rutas simuladas (coordenadas de ejemplo para simular el movimiento)
     const ruta = [
@@ -40,5 +49,4 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // Mover el marcador a intervalos (simula el movimiento de Papá Noel)
     setInterval(moverMarcador, 5000); // Mueve el marcador cada 5 segundos
-
 });

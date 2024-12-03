@@ -300,18 +300,6 @@ button:hover {
     margin-top: 40px;
 }
 
-/* Título y descripción de la sección */
-#videollamadas h2 {
-    font-size: 2rem;
-    color: #2f4f4f;
-}
-
-#videollamadas p {
-    font-size: 1rem;
-    color: #333;
-    margin-bottom: 20px;
-}
-
 /* Estilo para el contenedor de la llamada */
 #llamada-container {
     width: 700px; 
@@ -338,16 +326,28 @@ button:hover {
     height: auto;
     border-radius: 10px;
 }
+/* Línea negra */
+#linea-negra {
+    width: 100%; 
+    height: 60px; 
+    background-color: rgb(0, 0, 0);
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    z-index: 1;
+}
 
 /* Estilo para el botón de colgar dentro de la pantalla de llamada */
 .boton-colgar {
     position: absolute;
-    bottom: 20px;
+    display:none;
+    bottom: 2px; 
     left: 50%;
     transform: translateX(-50%);
     width: 50px;
     height: auto;
     cursor: pointer;
+    z-index: 2; /* Asegura que esté encima de la línea negra */
 }
 
 /* Estilo para el contenedor de los botones de llamar */
@@ -358,37 +358,25 @@ button:hover {
     gap: 20px;
 }
 
-/* Estilo para los botones de llamar */
-.boton {
-    width: 100px;
-    height: auto;
-    cursor: pointer;
+.mi-camara {
+    position: absolute;
+    bottom: 60px;
+    right: 20px;
+    width: 150px;
+    height: 100px;
+    border: 2px solid white;
+    border-radius: 10px;
+    overflow: hidden;
+    z-index: 3;
+    background-color: black; /* Fondo negro por si no carga la cámara */
 }
 
-/* Esconder el botón de colgar por defecto */
-#boton-colgar {
-    display: none;
+.video-mi-camara {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
 
-/* Esconder el botón de llamar cuando está en la llamada */
-#boton-llamar {
-    display: block;
-}
-
-/* Esconder la pantalla de llamada por defecto */
-#llamada-container {
-    display: none;
-}
-
-/* Hacer visible el botón de llamar solo cuando no haya llamada */
-#boton-llamar.oculto {
-    display: none;
-}
-
-/* Hacer visible el botón de colgar cuando hay llamada */
-#boton-colgar.visible {
-    display: block;
-}
 
 /*/////////////////////////////////////////////////////////////////*/
 

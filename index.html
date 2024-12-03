@@ -140,7 +140,7 @@
         </section>
 
         <!-- Pantalla de Videollamada con Papá Noel -->
-        <section id="videollamadas">
+        <section class="videollamadas">
             <h2>Videollamadas con Papá Noel</h2>
             <p>¡Haz una llamada a Papá Noel y disfruta de su saludo navideño!</p>
             
@@ -152,8 +152,13 @@
                         <source src="imagenes/videollamada.mp4" type="video/mp4">
                         Tu navegador no soporta el formato de video.
                     </video>
+                    <!-- Línea negra -->
+                    <div id="linea-negra"></div>
                     <!-- Botón de Colgar dentro de la pantalla de llamada -->
                     <img src="imagenes/colgar.png" alt="Colgar la llamada" id="boton-colgar" class="boton-colgar" />
+                    <div class="mi-camara">
+                        <video class="video-mi-camara" autoplay muted></video>
+                    </div>
                 </div>
             </div>
 

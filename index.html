@@ -6,6 +6,7 @@
     <title>Sitio Web de Papá Noel</title>
     <link rel="stylesheet" href="../CSS/styles.css">
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+
     <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
 </head>
 <body>
@@ -30,7 +31,7 @@
             <li><a class="atrib-menu" href="#home">HOME</a></li>
             <li><a class="atrib-menu" href="#rastreo">RASTREO EN TIEMPO REAL</a></li>
             <li><a class="atrib-menu" href="#juegos">JUEGOS</a></li>
-            <li><a class="atrib-menu" href="#cartas">CARTAS A PAPÁ NOEL</a></li>
+            <li><a class="atrib-menu" href="#enviar-carta">CARTAS A PAPÁ NOEL</a></li>
             <li><a class="atrib-menu" href="#videollamadas">VIDEOLLAMADAS</a></li>
             <li><a class="atrib-menu" href="#aldea">VISITA A LA ALDEA</a></li>
             <li><a class="atrib-menu" href="#calendario">CALENDARIO DE ADVIENTO</a></li>
@@ -94,7 +95,6 @@
             <p>¡Aquí puedes interactuar con Papá Noel y disfrutar de muchas actividades navideñas!</p>
             <p><span id="subtitulo">Tiempo restante hasta el 25 de diciembre:</span></p>
             <p id="contador">Días: <span id="days">0</span>, Horas: <span id="hours">0</span>, Minutos: <span id="minutes">0</span>, Segundos: <span id="seconds">0</span></p>
-            <img src="../imagenes/papanoel.gif" alt="Papá Noel">
         </section>
 
         <!-- Pantalla de Rastreo en Tiempo Real -->
@@ -102,7 +102,8 @@
             <h2>Rastreo en Tiempo Real</h2>
             <p>¡Sigue a Papá Noel en su recorrido por el mundo!</p>
             <div id="mapa-rastreo"></div> 
-            <p id="contador-rastreo"></p> 
+            <button id="boton-donde-esta-santa">¿Dónde está Santa?</button>
+            <p id="mensaje-santa"></p> 
         </section>
 
         <!-- Pantalla de Juegos Interactivos -->
@@ -118,9 +119,6 @@
             <div id="game-container"></div>
         </section>
         
-
-        
-
         <!-- Pantalla de Cartas a Papá Noel -->
         <section id="enviar-carta">
             <h2>Envía tu Carta</h2>

@@ -16,7 +16,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 console.error('Error al acceder a la cámara:', error);
             });
     }
-    
+
     // Función para hacer la llamada
     botonLlamar.addEventListener('click', function() {
         // Ocultar el botón de llamar
@@ -30,6 +30,12 @@ document.addEventListener('DOMContentLoaded', function () {
         
         // Mostrar el botón de colgar
         botonColgar.style.display = 'block';
+        
+        // Iniciar la cámara
+        iniciarCamara();
+        
+        // Mostrar la transcripción
+        document.getElementById('transcripcion').style.display = 'block';
     });
     
     // Función para colgar la llamada
@@ -46,8 +52,17 @@ document.addEventListener('DOMContentLoaded', function () {
         
         // Ocultar el botón de colgar
         botonColgar.style.display = 'none';
+        
+        // Detener la cámara
+        const stream = videoMiCamara.srcObject;
+        if (stream) {
+            const tracks = stream.getTracks();
+            tracks.forEach(track => track.stop());
+            videoMiCamara.srcObject = null;
+        }
+        
+        // Ocultar la transcripción
+        document.getElementById('transcripcion').style.display = 'none';
     });
-    iniciarCamara();
 });
-
 

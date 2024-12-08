@@ -1,0 +1,213 @@
+/*//////////////////////////////////////////////////////////////////*/
+/*                 📞 VIDEOLLAMADA PAPÁ NOEL 📞                     */
+/*//////////////////////////////////////////////////////////////////*/
+
+#llamada-container {
+    width: 700px; 
+    margin: 0 auto;
+    position: relative;
+    background-color: #000;
+    border-radius: 10px;
+    padding: 20px;
+    display: none; 
+}
+
+
+#pantalla-llamada {
+    position: relative;
+    background-color: #000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+#video-papa-noel {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+/* Línea negra */
+#linea-negra {
+    width: 100%; 
+    height: 60px; 
+    background-color: rgb(0, 0, 0);
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    z-index: 1;
+}
+
+
+.boton-colgar {
+    position: absolute;
+    display:none;
+    bottom: 2px; 
+    left: 50%;
+    transform: translateX(-50%);
+    width: 50px;
+    height: auto;
+    cursor: pointer;
+    z-index: 2; 
+}
+
+
+#botones-container {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.mi-camara {
+    position: absolute;
+    top: 20px; /* Cambiado de bottom a top */
+    right: 20px;
+    width: 150px;
+    height: 100px;
+    border: 2px solid white;
+    border-radius: 10px;
+    overflow: hidden;
+    z-index: 3;
+    background-color: black; 
+}
+
+@media only screen and (max-width: 601px) {
+    .mi-camara {
+        top: 10px; /* Cambiado de bottom a top */
+        right: 10px;
+        width: 100px;
+        height: 70px;
+    }
+}
+
+@media only screen and (max-width: 768px) and (min-width: 601px){
+    .mi-camara {
+        top: 10px; /* Cambiado de bottom a top */
+        right: 10px;
+        width: 100px;
+        height: 70px;
+    }
+}
+
+.video-mi-camara {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+#transcripcion {
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 8px;
+    margin-top: 20px;
+    display: none; /* Solo mostrar si se activa, por ejemplo, con un botón */
+}
+
+#transcripcion h3 {
+    margin-top: 0;
+    font-size: 1.2em;
+    color: #333;
+}
+
+#transcripcion p {
+    font-size: 1em;
+    color: #555;
+}
+
+
+
+/*//////////////////////////////////////////////////////////////////*/
+/*                   📲 AJUSTES MÓVIL 📲                          */
+/*//////////////////////////////////////////////////////////////////*/
+@media only screen and (max-width: 601px) {
+    #llamada-container {
+        width: 100%;
+        border-radius: 0;
+    }
+
+    #pantalla-llamada {
+        display: block;
+    }
+
+    #video-papa-noel {
+        width: 100%;
+        height: auto;
+        border-radius: 0;
+    }
+
+    #linea-negra {
+        height: 40px;
+    }
+
+    .boton-colgar {
+        display: block;
+        width: 40px;
+    }
+
+    #botones-container {
+        margin-top: 10px;
+    }
+
+    .mi-camara {
+        position: absolute;
+        bottom: 40px;
+        right: 10px;
+        width: 100px;
+        height: 70px;
+    }
+
+    .video-mi-camara {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+}
+
+/*//////////////////////////////////////////////////////////////////*/
+/*                   📲 AJUSTES IPAD 📲                          */
+/*//////////////////////////////////////////////////////////////////*/
+
+@media only screen and (max-width: 768px) and (min-width: 601px){
+    #llamada-container {
+        width: 100%;
+        border-radius: 0;
+    }
+
+    #pantalla-llamada {
+        display: block;
+    }
+
+    #video-papa-noel {
+        width: 100%;
+        height: auto;
+        border-radius: 0;
+    }
+
+    #linea-negra {
+        height: 40px;
+    }
+
+    .boton-colgar {
+        display: block;
+        width: 40px;
+    }
+
+    #botones-container {
+        margin-top: 10px;
+    }
+
+    .mi-camara {
+        position: absolute;
+        bottom: 40px;
+        right: 10px;
+        width: 100px;
+        height: 70px;
+    }
+
+    .video-mi-camara {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+}

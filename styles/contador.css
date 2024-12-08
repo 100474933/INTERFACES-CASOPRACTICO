@@ -1,0 +1,77 @@
+
+/*//////////////////////////////////////////////////////////////////*/
+/*                      ⏳ CONTADOR ⏳                             */
+/*//////////////////////////////////////////////////////////////////*/
+
+#contador {
+    font-size: 24px;
+    font-weight: bold;
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Courier New', monospace;
+    color:rgb(172, 29, 29)
+}
+
+
+#contador span {
+    margin: 0 10px;
+    padding: 10px;
+    background-color: #af4f4c2c;
+    border-radius: 5px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+    display: inline-block;
+    position: relative;
+    overflow: hidden;
+}
+
+#seconds {
+    animation: flipEffect 1s ease-in-out infinite;
+}
+
+/* Efecto de pasar las hojas como un calendario */
+@keyframes flipEffect {
+    0% {
+        transform: rotateX(0);
+        opacity: 1;
+    }
+    50% {
+        transform: rotateX(90deg);
+        opacity: 0;
+    }
+    100% {
+        transform: rotateX(0);
+        opacity: 1;
+    }
+}
+
+/*//////////////////////////////////////////////////////////////////*/
+/*                   📲 AJUSTES MÓVIL 📲                          */
+/*//////////////////////////////////////////////////////////////////*/
+@media only screen and (max-width: 601px) {
+    #contador {
+        font-size: 18px;
+    }
+
+    #contador span {
+        margin: 0 5px;
+        padding: 5px;
+    }
+}
+
+/*//////////////////////////////////////////////////////////////////*/
+/*                   📲 AJUSTES IPAD 📲                          */
+/*//////////////////////////////////////////////////////////////////*/
+
+@media only screen and (max-width: 768px) and (min-width: 601px){
+
+    #contador {
+        font-size: 20px;
+    }
+
+    #contador span {
+        margin: 0 5px;
+        padding: 5px;
+    }
+}

@@ -1,0 +1,150 @@
+/*//////////////////////////////////////////////////////////////////*/
+/*                 🎨 ESTILOS PRINCIPALES 🎨                       */
+/*//////////////////////////////////////////////////////////////////*/
+
+main {
+    padding-top: 80px;
+    text-align: center;
+}
+
+section {
+    border-radius: 8px;
+    height: 100vh; 
+}
+h1{
+    font-size: 50px;
+    margin-bottom: 20px;
+    color: #004d40;
+}
+P{
+    font-size: 20px;
+    margin-bottom: 20px;
+    color: #0b420e;
+}
+
+.footer {
+    color: #ffffff;
+}
+
+h2 {
+    color: #004d40;
+    font-size: 30px;
+    margin-top: 130px;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #004d40;
+    color: #fff;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+
+.hidden {
+    display: none;
+}
+
+button {
+    padding: 10px;
+    margin: 10px;
+    background-color: #004d40;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #00796b;
+}
+a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 18px;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: #76a88b;
+}
+ul {
+    list-style: none;
+    padding: 10px;
+}
+
+li {
+    margin-bottom: 10px;
+}
+
+/*//////////////////////////////////////////////////////////////////*/
+/*                   📲 AJUSTES MÓVIL 📲                          */
+/*//////////////////////////////////////////////////////////////////*/
+@media only screen and (max-width: 601px) {
+    main {
+        padding-top: 60px;
+    }
+    h1 {
+        font-size: 30px;
+    }
+    p {
+        font-size: 16px;
+    }
+    h2 {
+        font-size: 20px;
+        margin-top: 180px;
+    }
+    footer {
+        padding: 10px;
+    }
+    button {
+        padding: 5px;
+        margin: 5px;
+    }
+    a {
+        font-size: 16px;
+    }
+    ul {
+        padding: 5px;
+    }
+    li {
+        margin-bottom: 5px;
+    }
+}
+
+/*//////////////////////////////////////////////////////////////////*/
+/*                   📲 AJUSTES IPAD 📲                          */
+/*//////////////////////////////////////////////////////////////////*/
+
+@media only screen and (max-width: 768px) and (min-width: 601px){
+    main {
+        padding-top: 60px;
+    }
+    h1 {
+        font-size: 30px;
+    }
+    p {
+        font-size: 16px;
+    }
+    h2 {
+        font-size: 20px;
+        margin-top: 170px;
+    }
+    footer {
+        padding: 10px;
+    }
+    button {
+        padding: 5px;
+        margin: 5px;
+    }
+    a {
+        font-size: 16px;
+    }
+    ul {
+        padding: 5px;
+    }
+    li {
+        margin-bottom: 5px;
+    }
+}

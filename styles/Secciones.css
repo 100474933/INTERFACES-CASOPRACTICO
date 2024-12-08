@@ -1,0 +1,292 @@
+/*//////////////////////////////////////////////////////////////////*/
+/*                     🐵 SECCIONES 🐵                             */
+/*//////////////////////////////////////////////////////////////////*/
+
+#home {
+    background-image: url('/imagenes/fondo1.png'); 
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+}
+
+#videollamadas {
+    background-image: url('/imagenes/fondo2.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100vh;
+    text-align: center;
+    color: white;
+    display: flex;
+    flex-direction: column; 
+    align-items: center;     
+    text-align: center;
+}
+
+#rastreo {
+    background-image: url('/imagenes/fondo3.png'); 
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100vh;
+    text-align: center;
+    color: white;
+    display: flex;
+    flex-direction: column; 
+    align-items: center;     
+    text-align: center; 
+}
+
+#calendario {
+    background-image: url('/imagenes/fondo4.png'); 
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100vh;
+    text-align: center;
+    color: white;
+    display: flex;
+    flex-direction: column; 
+    align-items: center; 
+    text-align: center; 
+}
+
+#aldea {
+    background-image: url('/imagenes/fondo5.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100vh;
+    text-align: center;
+    color: white;
+    display: flex;
+    flex-direction: column; 
+    align-items: center; 
+    text-align: center;
+}
+
+#juegos {
+    background-image: url('/imagenes/fondo6.png'); 
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100vh;
+    text-align: center;
+    display: flex;
+    flex-direction: column; 
+    align-items: center; 
+    text-align: center;
+}
+
+#enviar-carta {
+    background-image: url('/imagenes/fondo7.png'); 
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100vh;
+    text-align: center;
+    display: flex;
+    flex-direction: column; 
+    align-items: center; 
+    text-align: center; 
+}
+
+#arbol{
+    background-image: url('/imagenes/fondo8.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100vh;
+    text-align: center;
+    display: flex;
+    flex-direction: column; 
+    align-items: center;     
+    text-align: center; 
+}
+/*//////////////////////////////////////////////////////////////////*/
+/*                   📲 AJUSTES MÓVIL 📲                          */
+/*//////////////////////////////////////////////////////////////////*/
+@media only screen and (max-width: 601px) {
+    #home {
+        background-image: url('/imagenes/fondo1.png'); 
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        height: 100vh;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        color: white;
+    }
+
+    #videollamadas {
+        background-image: url('/imagenes/fondo2.png');
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        min-height: 100vh; /* Asegura que ocupe toda la pantalla */
+        color: white; /* Para ver mejor el texto sobre el fondo */
+        text-align: center;
+    }
+
+    #rastreo {
+        background-image: url('/imagenes/fondo3.png'); 
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        height: 100vh;
+        text-align: center;
+        color: white;
+        display: flex;
+        flex-direction: column; 
+        align-items: center;     
+        text-align: center; 
+    }
+
+    #calendario {
+        background-image: url('/imagenes/fondo4.png'); 
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        height: 100vh;
+        text-align: center;
+        color: white;
+        display: flex;
+        flex-direction: column; 
+        align-items: center; 
+        text-align: center; 
+    }
+
+    #aldea {
+        background-image: url('/imagenes/fondo5.png');
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        height: 100vh;
+        text-align: center;
+        color: white;
+        display: flex;
+        flex-direction: column; 
+        align-items: center; 
+        text-align: center;
+    }
+
+    #juegos {
+        background-image: url('/imagenes/fondo6.png'); 
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        height: 100vh;
+        text-align: center;
+        display: flex;
+        flex-direction: column; 
+        align-items: center; 
+        text-align: center;
+    }
+
+    #enviar-carta {
+        background-image: url('/imagenes/fondo7.png'); 
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        height: 100vh;
+        text-align: center;
+        display: flex;
+        flex-direction: column; 
+        align-items: center; 
+        text-align: center; 
+}
+
+/*//////////////////////////////////////////////////////////////////*/
+/*                   📲 AJUSTES IPAD 📲                          */
+/*//////////////////////////////////////////////////////////////////*/
+
+@media only screen and (max-width: 768px) and (min-width: 601px){
+    #home {
+        background-image: url('/imagenes/fondo1.png'); 
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        height: 100vh;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        color: white;
+    }
+
+    #videollamadas {
+        background-image: url('/imagenes/fondo2.png');
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        min-height: 100vh; /* Asegura que ocupe toda la pantalla */
+        color: white; /* Para ver mejor el texto sobre el fondo */
+        text-align: center;
+    }
+
+    #rastreo {
+        background-image: url('/imagenes/fondo3.png'); 
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        height: 100vh;
+        text-align: center;
+        color: white;
+        display: flex;
+        flex-direction: column; 
+        align-items: center;     
+        text-align: center; 
+    }
+
+    #calendario {
+        background-image: url('/imagenes/fondo4.png'); 
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        height: 100vh;
+        text-align: center;
+        color: white;
+        display: flex;
+        flex-direction: column; 
+        align-items: center; 
+        text-align: center; 
+    }
+
+    #aldea {
+        background-image: url('/imagenes/fondo5.png');
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        height: 100vh;
+        text-align: center;
+        color: white;
+        display: flex;
+        flex-direction: column; 
+        align-items: center; 
+        text-align: center;
+    }
+
+    #juegos {
+        background-image: url('/imagenes/fondo6.png'); 
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        height: 100vh;
+        text-align: center;
+        display: flex;
+        flex-direction: column; 
+        align-items: center; 
+        text-align: center;
+    }
+    
+    }   }

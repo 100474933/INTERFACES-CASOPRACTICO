@@ -1,0 +1,118 @@
+/*//////////////////////////////////////////////////////////////////*/
+/*                          🌲 ÁRBOL 🌲                           */
+/*//////////////////////////////////////////////////////////////////*/
+
+#tree-container {
+    position: relative;
+    width: 500px;
+    height: 500px;
+    margin: 20px auto;
+}
+
+.tree {
+    width: 100%;
+    height: auto;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+#ornament-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px; 
+}
+
+.ornament {
+    font-size: 30px;
+    margin-top: 10px;
+    cursor: pointer;
+}
+
+#tree-container{
+    margin-top: 0px;
+}
+
+@media screen and (max-width: 400px) {
+    #tree-container {
+        width: 300px;
+        height: 300px;
+    }
+
+    .ornament {
+        font-size: 20px;
+    }
+
+    #ornament-container {
+        margin-top: 10px;
+    }
+
+    #tree-container{
+        margin-top: 0px;
+    }
+}
+/*//////////////////////////////////////////////////////////////////*/
+/*                   📲 AJUSTES MÓVIL 📲                          */
+/*//////////////////////////////////////////////////////////////////*/
+@media only screen and (max-width: 601px) {
+
+    #tree-container {
+        width: 300px;
+        height: 300px;
+    }
+
+    .ornament {
+        font-size: 20px;
+    }
+
+    #ornament-container {
+        margin-top: 10px;
+    }
+
+    #tree-container{
+        margin-top: 0px;
+    }
+}
+
+/*//////////////////////////////////////////////////////////////////*/
+/*                   📲 AJUSTES IPAD 📲                          */
+/*//////////////////////////////////////////////////////////////////*/
+
+@media only screen and (max-width: 768px) and (min-width: 601px){
+    
+        #tree-container {
+            width: 400px;
+            height: 400px;
+        }
+    
+        .ornament {
+            font-size: 25px;
+        }
+    
+        #ornament-container {
+            margin-top: 15px;
+        }
+    
+        #tree-container{
+            margin-top: 0px;
+        }
+}
+
+@media screen and (max-width: 900px) {
+    #tree-container {
+        width: 400px;
+        height: 400px;
+    }
+
+    .ornament {
+        font-size: 25px;
+    }
+
+    #ornament-container {
+        margin-top: 15px;
+    }
+
+    #tree-container{
+        margin-top: 0px;
+    }
+}   

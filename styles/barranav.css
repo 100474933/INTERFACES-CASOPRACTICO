@@ -1,0 +1,107 @@
+/*//////////////////////////////////////////////////////////////////*/
+/*                     🌐 BARRA DE NAVEGACIÓN 🌐                   */
+/*//////////////////////////////////////////////////////////////////*/
+/* Barra de Navegación */
+#barra-nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 60px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #004d40;
+    padding: 0 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+}
+
+.icono-menu img {
+    margin-left: 2px;
+    margin-top: 4px;
+    width: 90px;
+    height: 90px;
+}
+
+/* Título */
+.titulo {
+    font-size: 24px;
+    font-weight: 600;
+    margin: 0;
+    color: #fff;
+}
+
+/* Menú de Navegación */
+.menu {
+    display: none; 
+    position: fixed;
+    top: 60px;
+    left: 20px;
+    border-radius: 10px;
+    width: 20%;
+    background-color: #004d40 ;
+    z-index: 10;
+}
+
+.menu.open {
+    display: block; 
+}
+
+.menu_list {
+    list-style: none;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+/*//////////////////////////////////////////////////////////////////*/
+/*                   📲 AJUSTES MÓVIL 📲                          */
+/*//////////////////////////////////////////////////////////////////*/
+@media only screen and (max-width: 601px) {
+    .icono-menu img {
+        width: 40px;
+        height: 40px;
+    }
+
+    .titulo {
+        font-size: 14px;
+    }
+
+    .menu {
+        width: 100%;
+        left: 0;
+        right: 0;
+        top: 50px;
+    }
+
+    .menu_list {
+        padding: 10px;
+    }
+}
+
+/*//////////////////////////////////////////////////////////////////*/
+/*                   📲 AJUSTES IPAD 📲                          */
+/*//////////////////////////////////////////////////////////////////*/
+
+@media only screen and (max-width: 768px) and (min-width: 601px){
+    .icono-menu img {
+        margin-top: 4px;
+        width: 70px;
+        height: 70px;
+    }
+
+    .titulo {
+        font-size: 20px;
+    }
+
+    .menu {
+        width: 100%;
+        left: 0;
+    }
+
+    .menu_list {
+        padding: 10px;
+    }
+}

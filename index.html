@@ -3,124 +3,104 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="title" content="Papá Noel">
     <title>Sitio Web de Papá Noel</title>
-    <link rel="stylesheet" href="../CSS/styles.css">
+    <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
 
     <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
 </head>
 <body>
     <!-- Barra de Navegación -->
-    <section id="barra-nav">
+    <header id="barra-nav" class="nav-bar">
         <!-- Menú desplegable -->
-        <div class="MenuDesplegable">
-            <img src="../imagenes/menu.png" alt="Menú" onclick="MenuDesplegable()">
+        <div class="icono-menu">
+            <img src="../imagenes/menu.png" alt="Menú">
         </div>
-        <!-- Título -->
-        <h2 class="titulo">Mundo de Papá Noel</h2>
-        <!-- Botón de perfil -->
-        <div class="UserMenuDesplegable" onclick="UserMenuDesplegable()">
-            <img src="../imagenes/icono.png" alt="Perfil">
+    
+        <div class="titulo">
+            <h2 class="titulo">Mundo de Papá Noel</h2>
         </div>
-    </section>
+    
+        <!-- Menú de navegación -->
+        <div class="menu">
+            <ul class="menu_list">
+                <li><a href="#home">Inicio</a></li>
+                <li><a href="#rastreo">Rastreo en Tiempo Real</a></li>
+                <li><a href="#juegos">Juegos y Actividades</a></li>
+                <li><a href="#enviar-carta">Enviar Carta</a></li>
+                <li><a href="#videollamadas">Videollamadas</a></li>
+                <li><a href="#aldea">Visita a la Aldea</a></li>
+                <li><a href="#calendario">Calendario de Adviento</a></li>
+                <li><a href="#arbol">Árbol de Navidad</a></li>
+            </ul>
+        </div>
+    
+        <!-- Menú de usuario -->
+        <div class="user-menu">
+            <img src="../imagenes/icono.png" alt="Perfil" id="user-icon">
+            <div class="user-menu-list" id="user-menu">
+                <ul>
+                    <li id="user-name" class="hidden"></li>
+                    <li><a href="#" id="login-link" onclick="showLoginForm()">Iniciar Sesión</a></li>
+                    <li><a href="#" id="register-link" onclick="showRegisterForm()">Registrarse</a></li>
+                    <li><a href="#" id="logout-link" class="hidden" onclick="logoutUser()">Cerrar Sesión</a></li>
+                </ul>
+            </div>
+        </div>
 
-    <!-- Menú de Navegación -->
-    <div> 
-        <ul class="nav-menu hidden">
-            <li><a class="atrib-menu" href="#home">HOME</a></li>
-            <li><a class="atrib-menu" href="#rastreo">RASTREO EN TIEMPO REAL</a></li>
-            <li><a class="atrib-menu" href="#juegos">JUEGOS</a></li>
-            <li><a class="atrib-menu" href="#enviar-carta">CARTAS A PAPÁ NOEL</a></li>
-            <li><a class="atrib-menu" href="#videollamadas">VIDEOLLAMADAS</a></li>
-            <li><a class="atrib-menu" href="#aldea">VISITA A LA ALDEA</a></li>
-            <li><a class="atrib-menu" href="#calendario">CALENDARIO DE ADVIENTO</a></li>
-            <li><a class="atrib-menu" href="#arbol">ÁRBOL DE NAVIDAD INTERACTIVO</a></li>
-        </ul>
-    </div>
+        <!-- Formulario de Inicio de Sesión -->
+        <div id="login-form" class="form-container hidden">
+            <button class="close-btn" onclick="closeLoginForm()">×</button>
+            <h3>Iniciar Sesión</h3>
+            <form onsubmit="loginUser(event)">
+                <label for="login-email">Correo Electrónico:</label>
+                <input type="email" id="login-email" required>
+                <label for="login-password">Contraseña:</label>
+                <input type="password" id="login-password" required>
+                <button type="submit">Iniciar Sesión</button>
+            </form>
+        </div>
 
-    <!-- Menú de Usuario -->
-    <div class="user-menu hidden">
-        <ul>
-            <li><a href="#">Mi perfil</a></li>
-            <li><a href="#">Configuración</a></li>
-            <li><a href="#" onclick="logoutUser()">Cerrar sesión</a></li>
-        </ul>
-    </div>
+        <!-- Formulario de Registro -->
+        <div id="register-form" class="form-container hidden">
+            <button class="close-btn" onclick="closeRegisterForm()">×</button>
+            <h3>Registrarse</h3>
+            <form onsubmit="registerUser(event)">
+                <label for="register-name">Nombre:</label>
+                <input type="text" id="register-name" required>
+                <label for="register-lastname">Apellidos:</label>
+                <input type="text" id="register-lastname" required>
+                <label for="register-email">Correo Electrónico:</label>
+                <input type="email" id="register-email" required>
+                <label for="register-password">Contraseña:</label>
+                <input type="password" id="register-password" required>
+                <label for="register-repeat-password">Repetir Contraseña:</label>
+                <input type="password" id="register-repeat-password" required>
+                <label for="register-age">Edad:</label>
+                <input type="number" id="register-age" required>
+                <label for="register-city">Ciudad:</label>
+                <input type="text" id="register-city" required>
+                <label for="register-country">País:</label>
+                <input type="text" id="register-country" required>
+                <button type="submit">Registrarse</button>
+            </form>
+        </div>
 
-    <!-- Botones de autenticación -->
-    <div class="auth-buttons hidden">
-        <input type="button" class="login-btn" value="Iniciar Sesión" onclick="toggleLoginForm()">
-        <input type="button" class="register-btn" value="Registrarse" onclick="toggleRegisterForm()">
-    </div>
-
-    <!-- Formulario de Inicio de Sesión -->
-    <div id="login-form" class="form-container hidden">
-        <h3>Iniciar Sesión</h3>
-        <form onsubmit="loginUser(event)">
-            <label for="login-email">Correo Electrónico:</label>
-            <input type="email" id="login-email" required>
-            <label for="login-password">Contraseña:</label>
-            <input type="password" id="login-password" required>
-            <button type="submit">Iniciar Sesión</button>
-        </form>
-    </div>
-
-    <!-- Formulario de Registro -->
-    <div id="register-form" class="form-container hidden">
-        <h3>Registrarse</h3>
-        <form onsubmit="registerUser(event)">
-            <label for="register-name">Nombre:</label>
-            <input type="text" id="register-name" required>
-            <label for="register-lastname">Apellidos:</label>
-            <input type="text" id="register-lastname" required>
-            <label for="register-email">Correo Electrónico:</label>
-            <input type="email" id="register-email" required>
-            <label for="register-password">Contraseña:</label>
-            <input type="password" id="register-password" required>
-            <label for="register-repeat-password">Repetir Contraseña:</label>
-            <input type="password" id="register-repeat-password" required>
-            <label for="register-age">Edad:</label>
-            <input type="number" id="register-age" required>
-            <label for="register-city">Ciudad:</label>
-            <input type="text" id="register-city" required>
-            <label for="register-country">País:</label>
-            <input type="text" id="register-country" required>
-            <button type="submit">Registrarse</button>
-        </form>
-    </div>
-
-    <!-- Formulario de Registro -->
-    <div id="register-form" class="form-container hidden">
-        <h3>Registrarse</h3>
-        <form onsubmit="registerUser(event)">
-            <label for="register-name">Nombre:</label>
-            <input type="text" id="register-name" required>
-               <label for="register-lastname">Apellidos:</label>
-            <input type="text" id="register-lastname" required>
-            <label for="register-email">Correo Electrónico:</label>
-            <input type="email" id="register-email" required>
-            <label for="register-password">Contraseña:</label>
-            <input type="password" id="register-password" required>
-            <label for="register-repeat-password">Repetir Contraseña:</label>
-            <input type="password" id="register-repeat-password" required>
-            <label for="register-age">Edad:</label>
-            <input type="number" id="register-age" required>
-            <label for="register-city">Ciudad:</label>
-            <input type="text" id="register-city" required>
-            <label for="register-country">País:</label>
-            <input type="text" id="register-country" required>
-            <button type="submit">Registrarse</button>
-        </form>
-    </div>
-
+    </header>
 
     <main>
         <!-- Pantalla de Inicio -->
         <section id="home">
-            <h2>Bienvenido al Mundo de Papá Noel</h2>
+            <h1>Bienvenido al Mundo de Papá Noel</h1>
             <p>¡Aquí puedes interactuar con Papá Noel y disfrutar de muchas actividades navideñas!</p>
             <p><span id="subtitulo">Tiempo restante hasta el 25 de diciembre:</span></p>
-            <p id="contador">Días: <span id="days">0</span>, Horas: <span id="hours">0</span>, Minutos: <span id="minutes">0</span>, Segundos: <span id="seconds">0</span></p>
+            <div id="contador">
+                Días: <span id="days">0</span> 
+                Horas: <span id="hours">0</span> 
+                Minutos: <span id="minutes">0</span>
+                Segundos: <span id="seconds">0</span>
+            </div>
         </section>
 
         <!-- Pantalla de Rastreo en Tiempo Real -->
@@ -132,18 +112,20 @@
             <p id="mensaje-santa"></p> 
         </section>
 
-        <!-- Pantalla de Juegos Interactivos -->
+        
+        <!-- Pantalla de Juegos y Actividades -->
         <section id="juegos">
             <h2>Juegos y Actividades</h2>
             <p>Elige un juego para jugar:</p>
             <div id="game-selection">
-                <button onclick="startGame('guessNumber')">Adivina el número</button>
+                <button onclick="startGame('ticTacToe')">Tres en Raya</button>
                 <button onclick="startGame('clickCircle')">Clic en el círculo</button>
-                <button onclick="startGame('countLetters')">Cuenta las letras</button>
+                <button onclick="startGame('snake')">Snake</button>
             </div>
-        
             <div id="game-container"></div>
+
         </section>
+        
         
         <!-- Pantalla de Cartas a Papá Noel -->
         <section id="enviar-carta">
@@ -163,8 +145,7 @@
             </form>
         </section>
 
-        <!-- Pantalla de Videollamada con Papá Noel -->
-        <section class="videollamadas">
+        <section id="videollamadas" class="videollamadas">
             <h2>Videollamadas con Papá Noel</h2>
             <p>¡Haz una llamada a Papá Noel y disfruta de su saludo navideño!</p>
             
@@ -174,7 +155,12 @@
                 <div id="pantalla-llamada">
                     <video id="video-papa-noel" controls>
                         <source src="imagenes/videollamada.mp4" type="video/mp4">
+                        <!-- Mensaje si el navegador no soporta el formato -->
                         Tu navegador no soporta el formato de video.
+                        
+                        <!-- Subtítulos -->
+                        <track src="subtitulos.vtt" kind="subtitles" srclang="es" label="Español" default>
+
                     </video>
                     <!-- Línea negra -->
                     <div id="linea-negra"></div>
@@ -185,54 +171,61 @@
                     </div>
                 </div>
             </div>
-
+        
             <!-- Botón de Llamar -->
             <div id="botones-container">
                 <img src="imagenes/llamar.png" alt="Llamar a Papá Noel" id="boton-llamar" class="boton" />
             </div>
+        
+            <!-- Transcripción del video -->
+            <div id="transcripcion">
+                <h3>Transcripción del Saludo</h3>
+                <p>Hola, soy Papá Noel. ¡Espero que estés disfrutando de la Navidad! Recuerda que los elfos y yo estamos muy ocupados preparando los regalos para todos los niños del mundo. ¡Nos vemos pronto!</p>
+            </div>
         </section>
-
-
+        
+        
+        
 
 
         <!-- Pantalla de Visita Virtual a la Aldea de Papá Noel -->
         <section id="aldea">
             <h2>Visita a la Aldea de Papá Noel</h2>
-            <p>Explora la aldea de Papá Noel y descubre cómo se preparan para la Navidad. Pulsa en la galeria para descubrirlo.</p>
+            <p>Explora la aldea de Papá Noel y descubre cómo se preparan para la Navidad. Pulsa en la galería para descubrirlo.</p>
         
             <div class="galeria-aldea">
                 <!-- Imagen de la Casa de Papá Noel -->
-                <div class="imagen-aldea" onclick="mostrarDescripcion('casa')">
+                <div class="imagen-aldea" tabindex="0" data-lugar="casa">
                     <img src="imagenes/casa_papanoel.png" alt="Casa de Papá Noel">
                     <p>Casa de Papá Noel</p>
                 </div>
         
                 <!-- Imagen del Taller de Juguetes -->
-                <div class="imagen-aldea" onclick="mostrarDescripcion('taller')">
+                <div class="imagen-aldea" tabindex="0" data-lugar="taller">
                     <img src="imagenes/Taller_papanoel.png" alt="Taller de Papá Noel">
                     <p>Taller de Juguetes</p>
                 </div>
         
                 <!-- Imagen del sitio donde Papá Noel recibe las cartas -->
-                <div class="imagen-aldea" onclick="mostrarDescripcion('cartas')">
+                <div class="imagen-aldea" tabindex="0" data-lugar="cartas">
                     <img src="imagenes/buzon.png" alt="Sitio de las Cartas">
                     <p>Recibiendo Cartas</p>
                 </div>
         
                 <!-- Imagen de los elfos trabajando en el taller -->
-                <div class="imagen-aldea" onclick="mostrarDescripcion('elfos')">
+                <div class="imagen-aldea" tabindex="0" data-lugar="elfos">
                     <img src="imagenes/taller_elfos.png" alt="Taller de Elfos">
                     <p>El Taller de los Elfos</p>
                 </div>
         
                 <!-- Imagen de la mano derecha de Papá Noel -->
-                <div class="imagen-aldea" onclick="mostrarDescripcion('mano_derecha')">
+                <div class="imagen-aldea" tabindex="0" data-lugar="mano_derecha">
                     <img src="imagenes/elfo.png" alt="La Mano Derecha de Papá Noel">
                     <p>La Mano Derecha de Papá Noel</p>
                 </div>
         
                 <!-- Imagen de los renos -->
-                <div class="imagen-aldea" onclick="mostrarDescripcion('renos')">
+                <div class="imagen-aldea" tabindex="0" data-lugar="renos">
                     <img src="imagenes/Renos_papanoel.png" alt="Zona de los Renos">
                     <p>Zona de los Renos</p>
                 </div>
@@ -243,6 +236,7 @@
                 <button onclick="cerrarPopup()">Cerrar</button>
             </div>
         </section>
+        
         
         <!-- Pantalla del Calendario de Adviento Interactivo -->
         <section id="calendario">
@@ -283,7 +277,7 @@
     </main>
 
     <footer>
-        <p>© 2024 Papá Noel. Todos los derechos reservados.</p>
+        <p class="footer">© 2024 Papá Noel. Todos los derechos reservados.</p>
     </footer>
 </body>
     <script src="scripts/menu.js"></script>

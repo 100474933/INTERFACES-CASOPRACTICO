@@ -1,8 +1,8 @@
-// Función para mostrar la descripción cuando se hace clic en una imagen
+// Función para mostrar la descripción del lugar
 function mostrarDescripcion(lugar) {
     let descripcion = "";
 
-    // Descripciones para cada lugar
+    // Asignar descripción según el lugar
     if (lugar === "casa") {
         descripcion = "¡Bienvenido a la Casa de Papá Noel! Aquí, Papá Noel se relaja entre sus viajes. Vive en una acogedora casita llena de decoraciones navideñas y mapas para planificar su gran noche. Este es el lugar donde recarga energías antes de la Navidad.";
     } else if (lugar === "taller") {
@@ -17,14 +17,25 @@ function mostrarDescripcion(lugar) {
         descripcion = "La zona de los Renos es donde estos animales mágicos descansan y se preparan para la gran noche. Cada uno tiene su propio carácter y habilidad para volar, y juntos forman el equipo de renos más famoso del mundo.";
     }
 
-    
-
     // Mostrar el texto de la descripción en el popup
     document.getElementById('descripcion-texto').textContent = descripcion;
 
     // Mostrar el popup con la descripción
     document.getElementById('descripcion-popup').style.display = 'block';
 }
+
+// Añadir eventos para accesibilidad
+document.querySelectorAll('.imagen-aldea').forEach(function(element) {
+    element.addEventListener('click', function() {
+        mostrarDescripcion(this.dataset.lugar);
+    });
+    element.addEventListener('keydown', function(event) {
+        if (event.key === 'Enter' || event.key === ' ') {
+            event.preventDefault();
+            mostrarDescripcion(this.dataset.lugar);
+        }
+    });
+});
 
 // Función para cerrar el popup
 function cerrarPopup() {

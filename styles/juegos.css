@@ -1,0 +1,56 @@
+/*//////////////////////////////////////////////////////////////////*/
+/*                        🎮 JUEGOS 🎮                            */
+/*//////////////////////////////////////////////////////////////////*/
+
+#ticTacToeBoard {
+    display: grid;
+    grid-template-columns: repeat(3, 100px);
+    gap: 5px;
+    margin: 20px auto;
+    justify-content: center;
+    align-items: center;
+}
+
+#game-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+
+#snakeCanvas {
+    background-color: #f0f0f0;
+}
+
+/*//////////////////////////////////////////////////////////////////*/
+/*                   📲 AJUSTES MÓVIL 📲                          */
+/*//////////////////////////////////////////////////////////////////*/
+@media only screen and (max-width: 601px) {
+    #ticTacToeBoard {
+        grid-template-columns: repeat(3, 80px);
+    }
+    #game-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+}
+
+/*//////////////////////////////////////////////////////////////////*/
+/*                   📲 AJUSTES IPAD 📲                          */
+/*//////////////////////////////////////////////////////////////////*/
+
+@media only screen and (max-width: 768px) and (min-width: 601px){
+    #ticTacToeBoard {
+        grid-template-columns: repeat(3, 80px);
+    }
+    #game-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+}

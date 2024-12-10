@@ -20,7 +20,7 @@
 #ornament-container {
     display: flex;
     justify-content: center;
-    margin-top: 20px; 
+    margin-top: 20px;
 }
 
 .ornament {
@@ -29,33 +29,28 @@
     cursor: pointer;
 }
 
-#tree-container{
-    margin-top: 0px;
-}
+/*//////////////////////////////////////////////////////////////////*/
+/*                   📲 AJUSTES RESPONSIVOS 📲                     */
+/*//////////////////////////////////////////////////////////////////*/
 
+/* Pequeños teléfonos */
 @media screen and (max-width: 400px) {
     #tree-container {
-        width: 300px;
-        height: 300px;
+        width: 250px;
+        height: 250px;
     }
 
     .ornament {
-        font-size: 20px;
+        font-size: 18px;
     }
 
     #ornament-container {
-        margin-top: 10px;
-    }
-
-    #tree-container{
-        margin-top: 0px;
+        margin-top: 5px;
     }
 }
-/*//////////////////////////////////////////////////////////////////*/
-/*                   📲 AJUSTES MÓVIL 📲                          */
-/*//////////////////////////////////////////////////////////////////*/
-@media only screen and (max-width: 601px) {
 
+/* Teléfonos grandes */
+@media screen and (min-width: 401px) and (max-width: 600px) {
     #tree-container {
         width: 300px;
         height: 300px;
@@ -68,37 +63,26 @@
     #ornament-container {
         margin-top: 10px;
     }
+}
 
-    #tree-container{
-        margin-top: 0px;
+/* Tablets pequeñas */
+@media screen and (min-width: 601px) and (max-width: 768px) {
+    #tree-container {
+        width: 350px;
+        height: 350px;
+    }
+
+    .ornament {
+        font-size: 22px;
+    }
+
+    #ornament-container {
+        margin-top: 15px;
     }
 }
 
-/*//////////////////////////////////////////////////////////////////*/
-/*                   📲 AJUSTES IPAD 📲                          */
-/*//////////////////////////////////////////////////////////////////*/
-
-@media only screen and (max-width: 768px) and (min-width: 601px){
-    
-        #tree-container {
-            width: 400px;
-            height: 400px;
-        }
-    
-        .ornament {
-            font-size: 25px;
-        }
-    
-        #ornament-container {
-            margin-top: 15px;
-        }
-    
-        #tree-container{
-            margin-top: 0px;
-        }
-}
-
-@media screen and (max-width: 900px) {
+/* Tablets grandes */
+@media screen and (min-width: 769px) and (max-width: 1024px) {
     #tree-container {
         width: 400px;
         height: 400px;
@@ -111,8 +95,36 @@
     #ornament-container {
         margin-top: 15px;
     }
+}
 
-    #tree-container{
-        margin-top: 0px;
+/* Laptops pequeñas */
+@media screen and (min-width: 1025px) and (max-width: 1366px) {
+    #tree-container {
+        width: 450px;
+        height: 450px;
     }
-}   
+
+    .ornament {
+        font-size: 28px;
+    }
+
+    #ornament-container {
+        margin-top: 18px;
+    }
+}
+
+/* Pantallas grandes */
+@media screen and (min-width: 1367px) {
+    #tree-container {
+        width: 500px;
+        height: 500px;
+    }
+
+    .ornament {
+        font-size: 30px;
+    }
+
+    #ornament-container {
+        margin-top: 20px;
+    }
+}
